@@ -1,0 +1,194 @@
+// all custom styles for the site
+
+
+.intro {
+  padding-top: 2.25em;
+  padding-bottom: 2.25em;
+  color: $white;
+  background-color: $j-dark-grey;
+  background-image: url("../img/bg/competition-intro.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  @include bp( large ){
+    padding-top: 3.533em;
+    padding-bottom: 3.533em;
+  }
+  &__wrap {
+    max-width: $xlarge;
+    margin-top: 5.063em !important;
+    margin-bottom: 5.063em;
+    @include bp( large ){
+      margin-top: 8.667em !important;
+      margin-bottom: 8.667em;
+    }
+  }
+  &__logo--se {
+    max-width: 9.333em;
+  }
+  &__logo--jersey-barbour {
+    max-width: 16.667em;
+    margin-top: -1.467em;
+    margin-bottom: -1.467em;
+  }
+  &__description {
+    font-size: 1.2em;
+    line-height: 1.4;
+    font-weight: 400;
+  }
+}
+
+.content {
+  padding-top: 3.533em;
+}
+
+
+.prize {
+  &__item {
+    text-align: center;
+    list-style-type: none !important;
+    &:nth-of-type(1) .prize__icon { background-color: $j-light-green; }
+    &:nth-of-type(2) .prize__icon { background-color: $j-light-yellow; }
+    &:nth-of-type(3) .prize__icon { background-color: $j-light-teal; }
+    &:nth-of-type(4) .prize__icon { background-color: $j-light-blue; }
+  }
+  &__icon {
+    display: table;
+    width: 100%;
+    height: 8em;
+    vertical-align: middle;
+  }
+  &__icon-wrap {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  &__icon-image {
+    height: 3.375em;
+    width: auto;
+    &--bed      { height: 3.32em; }
+    &--lotus    { height: 3.375em; }
+    &--lobster  { height: 4.75em; }
+    &--jacket   { height: 3.75em; }
+  }
+  &__label {
+    padding-left: 1em;
+    padding-right: 1em;
+    margin-top: .25em;
+    line-height: 1.4;
+    @include bp( large ){
+      margin-top: 1.33em;
+    }
+  }
+}
+
+.feature {
+  padding-top: 2em;
+  .row + .row {
+    margin-top: 1.25em;
+  }
+  &__image {
+    width: 100%;
+    margin-bottom: 1.5em;
+  }
+  @include bp( xlarge ){
+    padding-top: 4.066em;
+    background-image: none !important;
+    &__content {
+      @include span($gutters 4 last);
+    }
+    &__image {
+      @include span($gutters 8);
+      margin-bottom: 0;
+    }
+    &--swap &__content { @include span($gutters 4); }
+    &--swap &__image { @include span($gutters 8 last); }
+    // vertically center columns
+    .flexbox & {
+      display: flex;
+      align-items: center;
+      &--swap {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+}
+
+
+.competition-entry {
+  text-align: center;
+  color: $white;
+  background-image: url("../img/bg/competition-bottom.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  &__wrap {
+    width:100%;
+    max-width: $xlarge;
+  }
+  &__title {
+    font-size: 1.467em;
+    margin-bottom: 1em;
+  }
+  &__iframe-wrap {
+    display: inline-block;
+    height: 25em;
+    width:100%;
+    max-width: $large;
+    background-color: $white;
+    background-image: url("../img/icon/loading.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    -webkit-overflow-scrolling:touch;
+    overflow:auto;
+    @include bp( large ){
+      overflow: visible;
+    }
+    .touch & {
+      overflow: auto;
+      -webkit-overflow-scrolling:touch;
+    }
+  }
+  &__iframe {
+    width: 100%;
+    height: 100%
+  }
+}
+
+.content-logo {
+  &--the-club-hotel-and-spa {
+    max-width: 4em;
+    @include bp( large ){
+      max-width: 5em;
+    }
+  }
+  &--barbour {
+    max-width: 10.25em;
+    @include bp( large ){
+      max-width: 11.25em;
+    }
+  }
+}
+
+
+// ---------- button ----------
+
+.btn {
+  @include transition;
+  display:inline-block;
+  padding: .75em .5em;
+  width: 100%;
+  max-width: $small;
+  color: white;
+  font-weight: 700;
+  font-size: 1.2em;
+  background-color: $j-orange;
+  line-height: 1;
+  &:hover {
+    text-decoration: none;
+    background-color: $j-dark-orange;
+    transform: scale(1.05,1.05);
+  }
+  * + & { margin-top: 1.33em; }
+}

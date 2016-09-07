@@ -1,0 +1,27 @@
+# Site settings
+title: Jersey
+description: >
+  An island of rediscovery where landscapes are just waiting to be explored. An island of natural beauty, where you’re free to revitalise in the fresh sea air.
+baseurl: "/jersey" # the subpath of your site, e.g. /blog/
+url: "https://www.secretescapes.com" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+exclude: [node_modules, gulpfile.js, package.json, bower_components, bower.json, README.md, _offers]
+
+
+####################   offers   ####################
+
+# create custom collection
+collections:
+  offers:
+    output: true
+    permalink: /offers/:path/
+# set default layout for collection
+defaults:
+  -
+    scope:
+      path: ""
+      type: "offers"
+    values:
+      layout: "offer"
